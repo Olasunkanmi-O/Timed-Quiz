@@ -1,10 +1,10 @@
 
 
-var questions = [
+var allQuestions = [
 {
     title: 'In which HTML element do we embed JavaScript?',
-    choices: ['<script>', '<Javascript>', '<src>', '<a>'],
-    answer: '<script>'
+    choices: ['script', 'Javascript', 'src', 'a'],
+    answer: 'script'
 },
 {
     title: 'What does Event Delegation mean to you?',
@@ -18,8 +18,8 @@ var questions = [
 },
 {
     title: 'Where is the correct place to insert a JavaScript?',
-    choices: ['<Head>', 'anywhere', '<body>', '<h1>',],
-    answer: '<body>'
+    choices: ['Head', 'anywhere', 'body', 'h1',],
+    answer: 'body'
 },
 {
     title: 'How do you write "Hello World" in an alert box?',
@@ -33,12 +33,18 @@ var questions = [
 }
 
 ]
+var currentQuestion = 0;
+var questions = document.querySelector('.questions');
+questions.innerHTML = `
+    <h2 id = "question-title">${allQuestions[currentQuestion].title}</h2>
+    <div id = "choices" class = "choices">
+        <ul></ul>
+    </div>
+`;    
 
-for (var question of questions) {
-    for (var prop in question){
-        console.log(`${prop} ; ${question[prop]}`)
-    }
+var ul = questions.querySelector('ul');
+var choices = allQuestions[currentQuestion].choices
+for (var choice of choices) {
+    ul.insertAdjacentHTML('beforeend', `<li>${choice}</li>`)
 }
 
-
-localStorage.setItem('highscore', '56')
