@@ -1,6 +1,6 @@
 
 
-var quesstion = [
+var questions = [
 {
     title: 'In which HTML element do we embed JavaScript?',
     choices: ['<script>', '<Javascript>', '<src>', '<a>'],
@@ -27,9 +27,18 @@ var quesstion = [
     answer: 'alert("Hello World")'
 },
 {
-    title: 'How do you call a function named "Printer"?',
-    choices: ['printer', 'call printer', 'call function printer()', 'Printer()'],
-    answer: 'Printer()'
+    title: 'How do you call a function named "printer"?',
+    choices: ['printer', 'call printer', 'call function printer()', 'printer()'],
+    answer: 'printer()'
 }
 
 ]
+
+for (var question of questions) {
+    for (var prop in question){
+        console.log(`${prop} ; ${question[prop]}`)
+    }
+}
+
+
+localStorage.setItem('highscore', '56')
