@@ -1,5 +1,7 @@
-// function to set timer 
 
+
+// function to set timer 
+var questions = document.querySelector('.questions');
 var timer = document.getElementById('time');
 var timeleft = 60;
 function countdown() {
@@ -14,7 +16,7 @@ function countdown() {
     var startScreen = document.querySelector('.start');
     startScreen.classList.add('hide')
 
-    var questions = document.querySelector('.questions');
+   
     questions.classList.remove('hide')
 
     
@@ -40,22 +42,26 @@ function correctAudio() {
 
 var currentQuestionIndex = 0;
 var questions = document.querySelector('.questions');
-questions.innerHTML = `
+
+
+// var ul = questions.querySelector('ul');
+var choices = allQuestions[currentQuestionIndex].choices
+
+function getQuestion (){
+    var currentQuestion = allQuestions[currentQuestionIndex]
+    console.log(currentQuestion)
+    questions.innerHTML = `
     <h2 id = "question-title">${allQuestions[currentQuestionIndex].title}</h2>
     <div id = "choices" class = "choices">
         <ul></ul>
     </div>
 `;    
-
-var ul = questions.querySelector('ul');
-var choices = allQuestions[currentQuestionIndex].choices
-for (var choice of choices) {
+    for (var choice of choices) {
     ul.insertAdjacentHTML('beforeend', `<li>${choice}</li>`)
 }
 
-function getQuestion (){
-    for ()
 }
+console.log(getQuestion())
 
 
 
