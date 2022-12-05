@@ -18,7 +18,7 @@ var allQuestions = [
 },
 {
     title: 'Where is the correct place to insert a JavaScript?',
-    choices: ['Head', 'anywhere', 'body', 'h1',],
+    choices: ['head', 'anywhere', 'body', 'h1',],
     answer: 'body'
 },
 {
@@ -33,18 +33,4 @@ var allQuestions = [
 }
 
 ]
-var currentQuestion = 0;
-var questions = document.querySelector('.questions');
-questions.innerHTML = `
-    <h2 id = "question-title">${allQuestions[currentQuestion].title}</h2>
-    <div id = "choices" class = "choices">
-        <ul></ul>
-    </div>
-`;    
-
-var ul = questions.querySelector('ul');
-var choices = allQuestions[currentQuestion].choices
-for (var choice of choices) {
-    ul.insertAdjacentHTML('beforeend', `<li>${choice}</li>`)
-}
 
