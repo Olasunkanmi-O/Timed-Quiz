@@ -5,9 +5,7 @@ var questions = document.querySelector('.questions');
 var timer = document.getElementById('time');
 var timeleft = 60;
 function countdown() {
-
     timer.innerText = timeleft
-
     var timerInterval = setInterval(function () {
         timeleft--;
         timer.innerText = timeleft
@@ -15,12 +13,23 @@ function countdown() {
 
     var startScreen = document.querySelector('.start');
     startScreen.classList.add('hide')
-
-   
     questions.classList.remove('hide')
 
+    var questionTitle = document.createElement('h2')
+    var questionText = document.createTextNode(allQuestions[currentQuestionIndex].title)
+    var options = document.createElement('button')
+    var choices = allQuestions[currentQuestionIndex].choices
     
+    
+    
+    
+    var optionsText = document.createTextNode(allQuestions[currentQuestionIndex].choices)
 
+
+    questionTitle.appendChild(questionText)
+    document.body.appendChild(questionTitle)
+    options.appendChild(optionsText)
+    document.body.appendChild(optionsText)
 }
 
 // adding event listener to the start button
@@ -44,42 +53,64 @@ var currentQuestionIndex = 0;
 var questions = document.querySelector('.questions');
 
 
-// var ul = questions.querySelector('ul');
-var choices = allQuestions[currentQuestionIndex].choices
-
-function getQuestion (){
-    var currentQuestion = allQuestions[currentQuestionIndex]
-    console.log(currentQuestion)
-    questions.innerHTML = `
-    <h2 id = "question-title">${allQuestions[currentQuestionIndex].title}</h2>
-    <div id = "choices" class = "choices">
-        <ul></ul>
-    </div>
-`;    
-    for (var choice of choices) {
-    ul.insertAdjacentHTML('beforeend', `<li>${choice}</li>`)
-}
-
-}
-console.log(getQuestion())
 
 
 
-// Setting event listener to question-wrap to confirm right answer
-
-questions.addEventListener('click', function (event) {
-    var answer = allQuestions[currentQuestionIndex].answer
-    var comparison = (event.target.innerText)
-    
-    if (comparison == answer) {
-        y.play();
-    }
-    else {
-        x.play(), timeleft -= 10
-    }
 
 
-})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // function getQuestion() {
+//     var currentQuestion = allQuestions[currentQuestionIndex]
+//     for (
+//     }
+
+// } getQuestion()
+
+
+
+
+// // Setting event listener to question-wrap to confirm right answer
+
+// questions.addEventListener('click', function (event) {
+//     var answer = allQuestions[currentQuestionIndex].answer
+//     var comparison = (event.target.innerText)
+
+//     if (comparison == answer) {
+//         y.play();
+//     }
+//     else {
+//         x.play(), timeleft -= 10
+//     }
+
+
+// })
 
 
 
