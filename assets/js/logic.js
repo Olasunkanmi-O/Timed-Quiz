@@ -17,13 +17,13 @@ function countdown() {
 
     var questionTitle = document.createElement('h2')
     var questionText = document.createTextNode(allQuestions[currentQuestionIndex].title)
-    var options = document.createElement('button')
-    var choices = allQuestions[currentQuestionIndex].choices
-    
-    
-    
-    
+    var options = document.createElement('li')
     var optionsText = document.createTextNode(allQuestions[currentQuestionIndex].choices)
+    
+  
+    
+    
+
 
 
     questionTitle.appendChild(questionText)
