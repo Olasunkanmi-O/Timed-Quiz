@@ -15,21 +15,18 @@ function countdown() {
     startScreen.classList.add('hide')
     questions.classList.remove('hide')
 
-    var questionTitle = document.createElement('h2')
+    var questionTitle = document.createElement('h3')
     var questionText = document.createTextNode(allQuestions[currentQuestionIndex].title)
-    var options = document.createElement('li')
+    var options = document.createElement('button')
     var optionsText = document.createTextNode(allQuestions[currentQuestionIndex].choices)
     
-  
-    
-    
-
 
 
     questionTitle.appendChild(questionText)
     document.body.appendChild(questionTitle)
     options.appendChild(optionsText)
-    document.body.appendChild(optionsText)
+    document.body.appendChild(options)
+    
 }
 
 // adding event listener to the start button
@@ -50,7 +47,16 @@ function correctAudio() {
 }
 
 var currentQuestionIndex = 0;
-var questions = document.querySelector('.questions');
+var currentQuestion = allQuestions[currentQuestionIndex]
+questionTitle.innerText = currentQuestion.title
+
+
+
+
+
+
+
+// var questions = document.querySelector('.questions');
 
 
 
