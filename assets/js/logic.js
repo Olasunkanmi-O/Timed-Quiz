@@ -5,7 +5,7 @@ var questions = document.querySelector('.questions');
 var timer = document.getElementById('time');
 var timeleft = 60;
 
-var currentQuestionIndex = 1;
+var currentQuestionIndex = 0;
 var currentQuestion = allQuestions[currentQuestionIndex]
 
 function countdown() {
@@ -31,21 +31,23 @@ function countdown() {
     
 
     for (i = 0; i < choices.length; i++) {
-        console.log(choices[i])
+        // console.log(choices[i])
         var options = document.createElement('button')
         var optionsText = document.createTextNode(allQuestions[currentQuestionIndex].choices[i])
+        var answer = allQuestions[currentQuestionIndex].answer
         options.appendChild(optionsText)
         document.body.appendChild(options)
         options.addEventListener('click', function (event) {
-            console.log(event.target.textContent)
+            if (event.target.innerText == answer){
+                y.play();
+            }else{
+                x.play(), timeleft -= 10; 
+            }
         })
+        
     
     }
-    //add event listener to the options
-    
-    
-
-  
+      
 
 }
 
