@@ -31,11 +31,19 @@ function countdown() {
     
 
     for (i = 0; i < choices.length; i++) {
+        console.log(choices[i])
         var options = document.createElement('button')
         var optionsText = document.createTextNode(allQuestions[currentQuestionIndex].choices[i])
         options.appendChild(optionsText)
         document.body.appendChild(options)
+        options.addEventListener('click', function (event) {
+            console.log(event.target.textContent)
+        })
+    
     }
+    //add event listener to the options
+    
+    
 
   
 
@@ -60,20 +68,6 @@ function incorrectAundio() {
 function correctAudio() {
     y.play();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -14,7 +14,8 @@ a:hover {
 }
 
 button {
-  display: inline-block;
+  display: block;
+  align-self: center;
   margin: 5px;
   cursor: pointer;
   font-size: 100%;
@@ -31,7 +32,7 @@ button:hover {
 }
 
 .choices button {
-  display: block;
+  display: inline;
 }
 
 input[type="text"] {
@@ -65,6 +66,8 @@ li:nth-child(odd) {
 .start {
   text-align: center;
 }
+
+
 
 .scores {
   position: absolute;
